@@ -36,7 +36,9 @@ jobs:
       - name: Deploy Stage
         uses: fjogeleit/http-request-action@v1
         with:
-           url: 'https://velocity.apps.6658525ddfd152001ef3dcb7.cloud.techzone.ibm.com/api/v1/metrics'
-           method: 'POST'
-           customHeaders: '{"Authorization": "UserAccessKey aaf68a5c-086a-4d50-b0e4-1f823c4364bb"}'
-           data: '{"tenantId":"5ade13625558f2c6688d15ce","dataSet":"IntegratoinTestingDataset","record":{"metricDefinitionId":"IntegrationTesting","recordName":"My Custom Definition Integration Testing record 1","pluginType":"plugin","dataFormat":"custom","executionDate":"1","value":{"mq-ok":"1","mq-fail":"1","db-ok":"1","db-fail":"1"},"description":"Tutorial data record"},"application":{"name":"ucd-ocp-demo"},"build":{"url":"https://github.com/aleiamp/ucd-ocp-demo/actions/runs/${{ github.run.id }}"}}'
+           url: 'https://myucdserver-ibm-ucd-prod-deploy.apps.6658525ddfd152001ef3dcb7.cloud.techzone.ibm.com/cli/component/propValue'
+           method: 'PUT'
+           data: '{"component": "COMPONENT",  "name": "buildUrl",  "value": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}'
+           ignoreSsl: true
+           username: admin
+           password: admin
