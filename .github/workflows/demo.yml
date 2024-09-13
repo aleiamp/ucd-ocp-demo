@@ -33,7 +33,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Deploy Stage
+      - name: Upload buil url as component property to ucd server to associate metrics to work item (dot)
         uses: fjogeleit/http-request-action@v1
         with:
            url: 'https://myucdserver-ibm-ucd-prod-deploy.apps.6658525ddfd152001ef3dcb7.cloud.techzone.ibm.com/cli/component/propValue'
