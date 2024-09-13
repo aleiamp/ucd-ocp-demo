@@ -38,5 +38,7 @@ jobs:
         with:
            url: 'https://myucdserver-ibm-ucd-prod-deploy.apps.6658525ddfd152001ef3dcb7.cloud.techzone.ibm.com/cli/component/propValue'
            method: 'PUT'
-           customHeaders: '{"Authorization": "Basic YWRtaW46YWRtaW4="}'
            data: '{"component": "COMPONENT",  "name": "buildUrl",  "value": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}'
+           ignoreSsl: true
+           username: admin
+           password: admin
